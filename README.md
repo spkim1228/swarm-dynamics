@@ -9,7 +9,7 @@ All data is stored in the `datastore/` folder, which is symlinked to an external
 ln -s "/path/to/folder/location" "datastore"
 ```
 
-Snapshot taken 2026-10-13: 26 files, 5.6 GB.
+Snapshot taken 2026-10-13: 21 files, 5.6 GB.
 
 ## Tree
 
@@ -34,12 +34,7 @@ datastore/
     │   └── village_goals.jsonl.gz                   4.3 KB
     └── collusion/
         ├── main/
-        │   ├── events.jsonl.gz                      475 KB
         │   ├── full-wiki-logs.zip                   4.0 MB
-        │   ├── labels.jsonl.gz                      164 KB
-        │   ├── manifest.json.gz                     6.0 KB
-        │   ├── pages.jsonl.gz                       228 KB
-        │   └── revisions.jsonl.gz                   3.1 MB
         └── other/
             ├── coverage-gaps.csv                     80 KB
             ├── links.jsonl.gz                       2.1 MB
@@ -55,7 +50,7 @@ All data that was been modified and any analysis outputs of data are held in thi
 
 ## `raw/`
 
-All raw data are held in this folder. No modifications were made to any of these file and exist as they were downlaoded.
+All raw data are held in this folder. No modifications were made to any of these file and exist as they were downloaded. All file formats are kept as the original unless noted below.
 
 ### `redacted.jsonl.gz`
 
@@ -167,29 +162,9 @@ The sequence of village-wide goals, with start/end times.
 
 All data of edits made by AI agents on the obscure German wiki.
 
-### `events.jsonl.gz`
-
-- **Size:** 475 KB
-
 ### `full-wiki-logs.zip`
 
 - **Size:** 4.0 MB
-
-### `labels.jsonl.gz`
-
-- **Size:** 164 KB
-
-### `manifest.json.gz`
-
-- **Size:** 6.0 KB
-
-### `pages.jsonl.gz`
-
-- **Size:** 228 KB
-
-### `revisions.jsonl.gz`
-
-- **Size:** 3.1 MB
 
 ## `raw/collusion/other/`
 
