@@ -5,9 +5,10 @@ import pyarrow.parquet as pq
 
 from pathlib import Path
 from datasets import load_dataset
+from swarm_dynamics import ROOT_PATH
 
 
-RAW_PATH = Path("datastore/raw")
+RAW_PATH = ROOT_PATH / "datastore" / "raw"
 MOLTBOOK_RAW = RAW_PATH / 'moltbook'
 HF_MOLTBOOK = 'SimulaMet/moltbook-observatory-archive'
 
@@ -25,4 +26,10 @@ def main():
 
     print('Loading word frequencies...\n')
     ds = load_dataset(HF_MOLTBOOK, 'word_frequency')
-    ds.to_csv(MOLTBOOK_RAW / 'word_frequency.csv', index=False)
+    print(ds)
+    # df = ds.set_format(type='pandas')
+    # df.to_csv(MOLTBOOK_RAW / 'word_frequency.csv', index=False)
+
+
+if __name__ == '__main__':
+    main()
