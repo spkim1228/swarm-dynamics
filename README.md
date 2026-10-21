@@ -9,7 +9,7 @@ All data is stored in the `datastore/` folder, which is symlinked to an external
 ln -s "/path/to/folder/location" "datastore"
 ```
 
-Snapshot taken 2026-10-13: 21 files, 5.6 GB.
+Snapshot taken 2026-10-21: 24 files, 8.0 GB.
 
 ## Tree
 
@@ -17,9 +17,6 @@ Snapshot taken 2026-10-13: 21 files, 5.6 GB.
 datastore/
 ├── cooked/                                          (empty)
 └── raw/
-    ├── redacted.jsonl.gz                             15 MB
-    ├── urlquery-agent-activity-2026-09-23.zip       4.4 MB
-    ├── us-canada-government-evidence-2026-09-30.zip  18 MB
     ├── ai-village/
     │   ├── CHANGELOG.md                              23 KB
     │   ├── agent_goals.jsonl.gz                     4.7 KB
@@ -32,16 +29,23 @@ datastore/
     │   ├── computer_use_turns.jsonl.gz              2.6 GB
     │   ├── events.jsonl.gz                          342 MB
     │   └── village_goals.jsonl.gz                   4.3 KB
-    └── collusion/
-        ├── main/
-        │   ├── full-wiki-logs.zip                   4.0 MB
-        └── other/
-            ├── coverage-gaps.csv                     80 KB
-            ├── links.jsonl.gz                       2.1 MB
-            ├── other-wikis.json.gz                  4.8 KB
-            ├── records.jsonl.gz                     3.7 MB
-            ├── shortener-logs.json.gz                14 KB
-            └── site-coverage.csv                    109 KB
+    ├── collusion/
+    │   ├── main/
+    │   │   └── full-wiki-logs.zip                   4.0 MB
+    │   └── other/
+    │       ├── coverage-gaps.csv                     80 KB
+    │       ├── links.jsonl.gz                       2.1 MB
+    │       ├── other-wikis.json.gz                  4.8 KB
+    │       ├── records.jsonl.gz                     3.7 MB
+    │       ├── shortener-logs.json.gz                14 KB
+    │       └── site-coverage.csv                    109 KB
+    └── moltbook/
+        ├── agents.parquet                            17 MB
+        ├── comments.parquet                         901 MB
+        ├── posts.parquet                            1.6 GB
+        ├── snapshots.parquet                        253 KB
+        ├── submolts.parquet                         644 KB
+        └── word_frequency.csv                        31 MB
 ```
 
 ## `cooked/`
@@ -51,34 +55,6 @@ All data that was been modified and any analysis outputs of data are held in thi
 ## `raw/`
 
 All raw data are held in this folder. No modifications were made to any of these file and exist as they were downloaded. All file formats are kept as the original unless noted below.
-
-### `redacted.jsonl.gz`
-
-- **Source:** https://swarmtraces.org/
-- **Size:** 15 MB
-- **Accessibility:** Free, publicly available
-- **Access Date:** 10/9/2026
-
-80,000 reassembled attack payloads from the OpenAI/Hugging Face attack.
-
-### `urlquery-agent-activity-2026-09-23.zip`
-
-
-- **Source:** https://transluce.org/
-- **Size:** 4.4 MB
-- **Accessibility:** Free, publicly available
-- **Access Date:** 10/9/2026
-
-Evidence of AI agents attempting to hack three public data source by compromising websites.
-
-### `us-canada-government-evidence-2026-09-30.zip`
-
-- **Source:** https://transluce.org/
-- **Size:** 18 MB
-- **Accessibility:** Free, publicly available
-- **Access Date:** 10/9/2026
-
-Two rudimentary and failed hacking attempts on U.S. and Canadian federal datasets.
 
 ## `raw/ai-village/`
 
@@ -193,3 +169,15 @@ Data of edits made by AI agents on additional message boards
 ### `site-coverage.csv`
 
 - **Size:** 109 KB
+
+## `raw/moltbook/`
+
+- **Source:** https://moltbook-observatory.sushant.info.np/
+- **Accessibility:** Free, publicly available
+- **Access Date:** 10/21/2026
+
+### `moltbook_observatory.db`
+
+- **Size:** 7.7 GB
+
+Full database dump of all collected dataset on Moltbook, including posts with metadata (ID, agent, submolt, title, content, score, timestamp), agents with stats (name, description, karma, followers, owner),and comments with metadata (ID, post_id, agent, content, score, timestamp).
