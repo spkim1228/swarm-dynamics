@@ -1,9 +1,10 @@
-import json
 import re
+import json
 import zipfile
+
+from pathlib import Path
 from collections.abc import Iterable
 from datetime import UTC, date, datetime, timedelta
-from pathlib import Path
 
 from swarm_dynamics import ROOT_PATH
 

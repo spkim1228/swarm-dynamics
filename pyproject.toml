@@ -7,7 +7,12 @@ authors = [
     { name = "Paul Kim", email = "spkim@protonmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "duckdb>=2.0.0",
+    "networkx>=3.7",
+    "ollama>=0.6.3",
+    "pyvis>=0.3.2",
+]
 
 [project.scripts]
 swarm-dynamics = "swarm_dynamics:main"
